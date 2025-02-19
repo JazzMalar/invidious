@@ -19,6 +19,10 @@ services:
           host: invidious-db
           port: 5432
         check_tables: true
+        signature_server: inv_sig_helper:12999
+        visitor_data: ${VISITOR_DATA}
+        po_token: ${PO_TOKEN}
+        hmac_key: ${HMAC_KEY}
     healthcheck:
       test: wget -nv --tries=1 --spider http://127.0.0.1:3000/api/v1/trending || exit 1
       interval: 30s
