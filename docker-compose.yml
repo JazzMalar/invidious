@@ -26,11 +26,14 @@ services:
           host: invidious-db
           port: 5432
         check_tables: true
+        signature_server: inv_sig_helper:12999
+        visitor_data: CgtuS01jTGM4MER0NCitxNe9BjIKCgJDSBIEGgAgGg%3D%3D
+        po_token: MnQOwJH7VwiJ3g74xkXKxNW4EXUQ868RO6n350CVQE_xN0yoClZCAD9_9NYU_8gorPKAmko6UWK9HNXvqzP_VWo_aBSm__P-MoCE151g09wHn76xmctcC-Lq1fPObyMu1rICPGrQ9RZ3msrc0pd7qf8Rmu28TQ==
         # external_port:
         # domain:
         # https_only: false
         # statistics_enabled: false
-        hmac_key: "CHANGE_ME!!"
+        hmac_key: "EinTestPasswort!Sehrsicher"
     healthcheck:
       test: wget -nv --tries=1 --spider http://127.0.0.1:3000/api/v1/trending || exit 1
       interval: 30s
